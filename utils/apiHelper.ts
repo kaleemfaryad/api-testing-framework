@@ -3,27 +3,27 @@ import { APIRequestContext } from '@playwright/test';
 export class ApiHelper {
   constructor(private request: APIRequestContext) {}
 
-  async getAllProducts() {
-    return this.request.get('/products');
+  async getAllPosts() {
+    return this.request.get('/posts');
   }
 
-  async getProductById(id: number) {
-    return this.request.get(`/products/${id}`);
+  async getPostById(id: number) {
+    return this.request.get(`/posts/${id}`);
   }
 
-  async createProduct(data: object) {
-    return this.request.post('/products', { data });
+  async createPost(data: object) {
+    return this.request.post('/posts', { data });
   }
 
-  async updateProduct(id: number, data: object) {
-    return this.request.put(`/products/${id}`, { data });
+  async updatePost(id: number, data: object) {
+    return this.request.put(`/posts/${id}`, { data });
   }
 
-  async deleteProduct(id: number) {
-    return this.request.delete(`/products/${id}`);
+  async deletePost(id: number) {
+    return this.request.delete(`/posts/${id}`);
   }
 
-  async getAllCategories() {
-    return this.request.get('/products/categories');
+  async getAllUsers() {
+    return this.request.get('/users');
   }
 }
